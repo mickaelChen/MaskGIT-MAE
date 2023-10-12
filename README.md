@@ -39,7 +39,7 @@ To get started with this project, follow these steps:
 
    ```bash
    git clone https://github.com/llvictorll/MaskGIT-pytorch.git
-   cd MaskGIT-Pytorch
+   cd MaskGIT-pytorch
 
 2. Install requirement 
 
@@ -50,6 +50,7 @@ To get started with this project, follow these steps:
 3. (Opt.) Download Pretrained models  
 
    ```bash
+   pip install gdown
    mkdir -p ckpt/MaskGIT/
    mkdir -p ckpt/VQGAN/
    # VQGAN
@@ -58,7 +59,7 @@ To get started with this project, follow these steps:
    # MaskGIT 256
    gdown https://drive.google.com/uc?id=1vKm_69CNZYQvmHBy0azNcGYu8kMVeibg -O 'ckpt/MaskGIT/' 
    # MaskGIT 512
-   gdown https://drive.google.com/uc?id=1SFGjkVZXE2k_gMM2DOCowncGoV6fKrjG-O 'ckpt/MaskGIT/' 
+   gdown https://drive.google.com/uc?id=1SFGjkVZXE2k_gMM2DOCowncGoV6fKrjG -O 'ckpt/MaskGIT/' 
    
 4. Launch training
    ```bash
