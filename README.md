@@ -26,6 +26,7 @@ Here's an overview of the repository structure:
       |    ├── save_img/                              <- Image samples         
       |    |
       |    ├── colab_demo.ipynb                       <- Inference demo 
+      |    ├── download_models.py                     <- download the pretrained models
       |    ├── LICENSE.txt                            <- MIT license
       |    ├── requirements.yaml                      <- help to install env 
       |    ├── README.md                              <- Me :) 
@@ -52,7 +53,7 @@ To get started with this project, follow these steps:
    ```bash
    python download_models.py
    
-4. Resume training
+4. Resume training for 1 additional epoch
    ```bash
    data_folder="/datasets_local/ImageNet/"
    vit_folder="./pretrained_maskgit/MaskGIT/MaskGIT_ImageNet_256_FID_6_80.pth"
@@ -61,9 +62,9 @@ To get started with this project, follow these steps:
    num_worker=16
    bsize=64
    # Single GPU
-   python main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 600  
+   python main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 301 --resume
    # Multiple GPUs single node
-   torchrun --standalone --nnodes=1 --nproc_per_node=gpu main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 600
+   torchrun --standalone --nnodes=1 --nproc_per_node=gpu main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 301 --resume
 ## Demo
 
 You are interested only on inference of the model? You can run the demo_colab.ipynb in google collab! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/colab_demo.ipynb)
