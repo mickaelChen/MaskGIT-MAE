@@ -25,3 +25,4 @@ dependencies:
       - omegaconf==2.0.0
       - einops==0.3.0
       - webdataset
+      - huggingface_hub

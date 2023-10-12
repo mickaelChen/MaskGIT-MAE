@@ -50,16 +50,7 @@ To get started with this project, follow these steps:
 3. (Opt.) Download Pretrained models  
 
    ```bash
-   pip install gdown
-   mkdir -p ckpt/MaskGIT/
-   mkdir -p ckpt/VQGAN/
-   # VQGAN
-   gdown https://drive.google.com/uc?id=10pmySOtBrh8y3jKEa913vEuDR5KRauUt -O 'ckpt/VQGAN/'
-   gdown https://drive.google.com/uc?id=10sQaqL70tsMze7RYJ7QkgPTVhGQrE9yf -O 'ckpt/VQGAN/'
-   # MaskGIT 256
-   gdown https://drive.google.com/uc?id=1vKm_69CNZYQvmHBy0azNcGYu8kMVeibg -O 'ckpt/MaskGIT/' 
-   # MaskGIT 512
-   gdown https://drive.google.com/uc?id=1SFGjkVZXE2k_gMM2DOCowncGoV6fKrjG -O 'ckpt/MaskGIT/' 
+   python download_model.py
    
 4. Launch training
    ```bash
