@@ -1,7 +1,7 @@
 # MaskGIT PyTorch
 
 [![GitHub stars](https://img.shields.io/github/stars/llvictorll/MaskGIT-pytorch.svg?style=social)](https://github.com/llvictorll/MaskGIT-pytorch/stargazers)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/demo_colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/colab_demo.ipynb)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 <img src="saved_img/frog.png" alt="drawing" width="25"/>
 
@@ -25,7 +25,7 @@ Here's an overview of the repository structure:
       |    |      └── vit.py                          <- Trainer of maskgit
       |    ├── save_img/                              <- Image samples         
       |    |
-      |    ├── demo_colab.ipynb                       <- Inference demo 
+      |    ├── colab_demo.ipynb                       <- Inference demo 
       |    ├── LICENSE.txt                            <- MIT license
       |    ├── requirements.yaml                      <- help to install env 
       |    ├── README.md                              <- Me :) 
@@ -66,7 +66,7 @@ To get started with this project, follow these steps:
 
 ## Demo
 
-You are interested only on inference of the model? You can run the demo_colab.ipynb in google collab! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/demo_colab.ipynb)
+You are interested only on inference of the model? You can run the demo_colab.ipynb in google collab! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/colab_demo.ipynb)
 
 ## Training Details
 
