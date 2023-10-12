@@ -50,14 +50,20 @@ To get started with this project, follow these steps:
 3. (Opt.) Download Pretrained models  
 
    ```bash
-   python download_model.py
+   python download_models.py
    
-4. Launch training
+4. Resume training
    ```bash
+   data_folder="/datasets_local/ImageNet/"
+   vit_folder="./pretrained_maskgit/MaskGIT/MaskGIT_ImageNet_256_FID_6_80.pth"
+   vqgan_folder="./pretrained_maskgit/VQGAN/"
+   writter_log="./logs/"
+   num_worker=16
+   bsize=64
    # Single GPU
-   python main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 300  
+   python main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 600  
    # Multiple GPUs single node
-   torchrun --standalone --nnodes=1 --nproc_per_node=gpu main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 300
+   torchrun --standalone --nnodes=1 --nproc_per_node=gpu main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 600
 ## Demo
 
 You are interested only on inference of the model? You can run the demo_colab.ipynb in google collab! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/colab_demo.ipynb)
@@ -118,7 +124,7 @@ The model demonstrates good capabilities in inpainting ImageNet-generated images
 
 ## Pretrained Model
 
-You can download the pretrained MaskGIT models in the release of the code.
+You can download the pretrained MaskGIT models in hugging face: https://huggingface.co/llvictorll/Maskgit-pytorch/tree/main
 
 ## Contribute
 
