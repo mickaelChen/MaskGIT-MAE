@@ -5,7 +5,9 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 <img src="saved_img/frog.png" alt="drawing" width="25"/>
 
-Hi there! Welcome to the unofficial MaskGIT PyTorch repository. This project is inspired by the paper [MaskGIT: Masked Generative Image Transformer](https://arxiv.org/abs/2202.04200), and it aims to provide a PyTorch implementation and pretrained models for MaskGIT.
+Welcome to the unofficial MaskGIT PyTorch repository. 
+This project aims to provide an external reproduction of the results from [MaskGIT: Masked Generative Image Transformer](https://arxiv.org/abs/2202.04200), a PyTorch reimplementation of the models, and pretrained weights.
+Official JAX implementation of MaskGIT can be found [here](https://github.com/google-research/maskgit).
 
 ## Repository Structure
 
@@ -58,13 +60,13 @@ To get started with this project, follow these steps:
    data_folder="/datasets_local/ImageNet/"
    vit_folder="./pretrained_maskgit/MaskGIT/MaskGIT_ImageNet_256_FID_6_80.pth"
    vqgan_folder="./pretrained_maskgit/VQGAN/"
-   writter_log="./logs/"
+   writer_log="./logs/"
    num_worker=16
    bsize=64
    # Single GPU
    python main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 301 --resume
    # Multiple GPUs single node
-   torchrun --standalone --nnodes=1 --nproc_per_node=gpu main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writter_log}" --num_workers ${num_worker} --img-size 256 --epoch 301 --resume
+   torchrun --standalone --nnodes=1 --nproc_per_node=gpu main.py  --bsize ${bsize} --data-folder "${data_folder}" --vit-folder "${vit_folder}" --vqgan-folder "${vqgan_folder}" --writer-log "${writer_log}" --num_workers ${num_worker} --img-size 256 --epoch 301 --resume
 ## Demo
 
 You are interested only on inference of the model? You can run the demo_colab.ipynb in google collab! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llvictorll/MaskGIT-pytorch/blob/main/colab_demo.ipynb)
