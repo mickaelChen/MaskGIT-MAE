@@ -47,14 +47,14 @@ class Trainer(object):
                                                              transforms.ToTensor(),
                                                              ]))
         elif self.args.data == "cifar10":
-            data_train = CIFAR10('/datasets_local/CIFAR10/', train=True, download=False,
+            data_train = CIFAR10('/Dataset/CIFAR10/', train=True, download=False,
                                  transform=transforms.Compose([
                                            transforms.Resize(self.args.img_size),
                                            transforms.RandomHorizontalFlip(),
                                            transforms.ToTensor(),
                                            transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
                                  ]))
-            data_test = CIFAR10('/datasets_local/CIFAR10/', train=False, download=False,
+            data_test = CIFAR10('/Dataset/CIFAR10/', train=False, download=False,
                                 transform=transforms.Compose([
                                     transforms.Resize(self.args.img_size),
                                     transforms.ToTensor(),
@@ -77,7 +77,7 @@ class Trainer(object):
                               ]))
 
         elif self.args.data == "imagenet":
-            # '/datasets_local/ImageNet/train'
+            # '/Dataset/ImageNet/train'
             t_train = transforms.Compose([transforms.Resize(self.args.img_size),
                                           transforms.RandomCrop((self.args.img_size, self.args.img_size)),
                                           transforms.RandomHorizontalFlip(),
@@ -95,8 +95,8 @@ class Trainer(object):
                                          ])
 
             try:
-                data_train = ImageFolder(self.args.data_folder + "/train", transform=t_train)
-                data_test = ImageFolder(self.args.data_folder + "val", transform=t_test)
+                data_train = ImageFolder(os.path.join(self.args.data_folder, "train"), transform=t_train)
+                data_test = ImageFolder(os.path.join(self.args.data_folder, "val"), transform=t_test)
             except:
                 data_train = ImageNetKaggle(self.args.data_folder, "train", transform=t_train)
                 data_test = ImageNetKaggle(self.args.data_folder, "val", transform=t_test)
